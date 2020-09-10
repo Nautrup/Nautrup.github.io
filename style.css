@@ -1,38 +1,65 @@
-  
-html, body {
-    width: 50%;
-    margin: 0 auto;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.container {
-    width: 360px;
-}
-
-#inputField {
-    width: 300px;
-    height: 46px;
-    border-width: 0;
-    border: 1px solid black;
-    outline: none;
-    font-size: 25px;
-    vertical-align: middle;
-}
-
-#addToDo {
-    height: 50px;
-    width: 50px;
-    border: 1px solid black;
-    vertical-align: middle;
-    font-size: 30px;
-}
-
-.paragraph-styling {
+* {
     margin: 0;
-    cursor: pointer;
-    font-size: 20px;
+    padding: 0;
 }
 
-.to-dos {
-    margin-top: 25px;
+form input, form button {
+    padding: 5px;
+    font-size: 2rem;
+}
+
+body {
+    background-color: rgb(255, 160, 123);
+    Color:black;
+}
+
+header, form, .todo-container, .credit {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.todo-list {
+    min-width: 35%;
+    list-style: none;
+}
+
+.todo {
+    background-color:white;
+    margin: 0.5rem;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo li {
+    flex: 1;
+    padding: 5px;
+    font-size: 1.5rem;
+}
+
+.btn-delete, .btn-complete {
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.btn-delete {
+    background-color: red;
+}
+
+.btn-complete {
+    background-color: green;
+}
+
+.fa-trash, .fa-check {
+    pointer-events: none;
+
+}
+
+.completed {
+    text-decoration:line-through;
+    font-weight: lighter;
+    background: rgb(152, 251, 149);
 }

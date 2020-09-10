@@ -1,35 +1,62 @@
-var addToDoButton = document.getElementById('addToDo');
-var toDoContainer = document.getElementById('toDoContainer');
-var inputField = document.getElementById('inputField');
+var todoInput = document.querySelector(".todo-input");
+var todoButton = document.querySelector(".todo-button");
+var todoList = document.querySelector(".todo-list");
 
-addToDoButton.addEventListener('click', TestMethod)
+todoButton.addEventListener('click', createElement);
+todoList.addEventListener('click', todoCheck);
 
-function createElements(event) {
-    // opretter paragraf element
-    var paragraph = document.createElement('p');
-    // sætter texten til at være det samme som i inputboxen
-    paragraph.innerText = inputField.value;
-    // Ny event listener der sætter en streng gennem ordet hvis man trykker
-    paragraph.addEventListener('click', function(event) {
-        paragraph.style.textDecoration = "line-through"
+function createElement (event) {
+    event.preventDefault();
+
+    // Opretter et div element
+    var todoDiv = document.createElement('div');
+    todoDiv.classList.add('todo');
+
+    // opretter li element
+    var todoLi = document.createElement('li');
+    // indæstte data
+    todoLi.innerText = todoInput.value;
+    // Giver det element en class
+    todoLi.classList.add('todo-item');
+    // smider todoLi ind i todoDiv'en
+    todoDiv.appendChild(todoLi);
+
+    // Complete knap
+    var complteButton = document.createElement('button');
+    complteButton.innerHTML = '<i class="fas fa-check"></i>';
+    complteButton.classList.add('btn-complete');
+    complteButton.addEventListener('click', function(){
+        //todoLi.style.textDecoration = "line-through";
     })
-    // tilføjer den til min toDoContainer
-    toDoContainer.appendChild(paragraph);
+    todoDiv.appendChild(complteButton);
+    
+    // Slet knap
+    var deleteButton = document.createElement('button');
+    deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
+    deleteButton.classList.add('btn-delete');
+    deleteButton.addEventListener('click', function(e){
+        // delete code here
+        // var list = document.querySelector(".todo-list");
+        
+        // list.removeChild(list.childNodes[0]);  
+    })
+    todoDiv.appendChild(deleteButton);
+
+    // Smider alt det overstående ind i vores todoList, som allerede er i vores index.html
+    todoList.appendChild(todoDiv);
 }
 
-// Et forsøg på at gøre den mere advanceret.
-function TestMethod(event) {
-    var div = document.createElement('div');
-    // opretter paragraf element
-    var paragraph = document.createElement('p');
-    // sætter texten til at være det samme som i inputboxen
-    paragraph.innerText = inputField.value;
-    div.appendChild(paragraph);
-
-    // oprette knap
-    var button = document.createElement('button');
-    button.innerText = "-";
-    div.appendChild(button);
-    // tilføjer den til min toDoContainer
-    toDoContainer.appendChild(div);
+function todoCheck(e) {
+    // Finder det item vi klikker på
+    var item = e.target;
+    console.log(e.target);
+    // Laver et check på hvad den skal gøre, med det item.
+    if (item.classList[0] === 'btn-delete') {
+        var parentElement = item.parentElement;
+        parentElement.remove();
+    } else if (item.classList[0] === 'btn-complete'){
+        var parentElement = item.parentElement;
+        parentElement.classList.toggle('completed');
+        console.log(parentElement);
+    }
 }
