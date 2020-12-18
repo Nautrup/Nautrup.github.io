@@ -1,68 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./style.css">
-    <title>Todo List</title>
+  <title>Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />  
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
-    <header>
-        <h1>Todo List</h1>
-    </header>
+<body onload="GetWeatherData()">
 
-    <div class="credit">
-        <p>by Jonas R. Johansen</p>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Jonas Rudbeck Johansen</h1>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Uge41</a> 
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="../TodoList/index.html">Gamle todo</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" href="../Weather/index.html">Uden bootstrap</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-sm-4">
+      <h4 id="city">By</h4>
+        <h4 id="temperatur">Temp</h4>
+        <h4 id="description">Beskrivelse</h4>
+        <img id="icon" src=""></img>
+        <hr class="d-sm-none">
+        <br>
+        <hr>
+
+        <div class="rss-news">
+            <h4 class="display-5">Nyheder</h3>
+                <a class="btn btn-primary" target="_blank" href="https://www.dr.dk/nyheder" role="button">Læs mere</a>
+</div>
     </div>
-    
-    <form >
-        <input type="text" class="todo-input" placeholder="Indtast todo her...">
-        <button class="todo-button" type="submit">
-            <i class="fas fa-plus-square"></i>
-        </button>
-    </form>
- 
-    
 
-    <div class="todo-container">
-        <div class="weather">
-            <p>Hello there</p>
+    <div class="col-sm-8">
+      <!-- Todo input -->
+      <form class="form-inline">
+        <div class="form-group mx-sm-1 mb-2">
+          <input type="text" class="form-control" id="todoIdInput" placeholder="Indtast todo her...">
         </div>
-        
-        <ul class="todo-list">
+        <a class="todo-button btn btn-primary mb-2" role="button">
+          <i class="fas fa-plus-square"></i>
+        </a>
+      </form>
+        <!-- Todo listen -->
+        <div class="todo-container">
+            <ul class="todo-list">
 
-            <div class="todo">
-                <li class="todo-item">Køb kaffe</li>
-                <button class="btn-complete">
-                    <i class="fas fa-check"></i>
-                </button><button class="btn-delete">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
+              <!-- pre difineret liste -->
+                <div class="todo">
+                    <li class="todo-item">Køb kaffe</li>
+                    <button class="btn-complete">
+                        <i class="fas fa-check"></i>
+                    </button><button class="btn-delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+    
+                <div class="todo">
+                    <li class="todo-item">Lav Kaffe</li>
+                    <button class="btn-complete">
+                        <i class="fas fa-check"></i>
+                    </button><button class="btn-delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+    
+                <div class="todo">
+                    <li class="todo-item">Drik kaffe</li>
+                    <button class="btn-complete">
+                        <i class="fas fa-check"></i>
+                    </button><button class="btn-delete">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+                
+            </ul>
+        </div>
 
-            <div class="todo">
-                <li class="todo-item">Lav Kaffe</li>
-                <button class="btn-complete">
-                    <i class="fas fa-check"></i>
-                </button><button class="btn-delete">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
+        <!-- Magic Eight ball-->
+        <div class="form-inline">
+            <form class="form-inline">
+              <div class="form-group mx-sm-1 mb-2">
+                <input type="text" class="form-control" id="magicInput" placeholder="Spørgsmål her...">
+              </div>
+              <a class="input-button btn btn-primary mb-2" role="button" onclick="magicBall()">Få svar</a>
+            
+              <p id="response">Svar</p>
+            </form>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- Footer -->
+<div class="jumbotron text-center" style="margin-bottom:0;">
+  <p>Jonas Rudbeck Johansen | Projekt Uge 41 |2020</p>
+</div>
 
-            <div class="todo">
-                <li class="todo-item">Drik kaffe</li>
-                <button class="btn-complete">
-                    <i class="fas fa-check"></i>
-                </button><button class="btn-delete">
-                    <i class="fas fa-trash"></i>
-                </button>
-            </div>
-
-        </ul>
-    </div>
-
-    <script src="./script.js"></script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
