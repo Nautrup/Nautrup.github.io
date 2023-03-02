@@ -1,0 +1,86 @@
+.tile {
+    border: 1px solid grey;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Calibri';
+    font-weight: bold;
+    color: white;
+    line-height: 5rem;
+    /* margin: 0.5rem; */
+}
+
+.tileRow {
+    border: 1px solid grey;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Calibri';
+    font-weight: bold;
+    color: white;
+    line-height: 5rem;
+    border-bottom: 3px solid rgb(197, 128, 0);
+    /* margin: 0.5rem; */
+}
+
+.tileCol {
+    border: 1px solid grey;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Calibri';
+    font-weight: bold;
+    color: white;
+    line-height: 5rem;
+    border-right: 3px solid rgb(197, 128, 0);
+    /* margin: 0.5rem; */
+}
+
+.tileRowCol {
+    border: 1px solid grey;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Calibri';
+    font-weight: bold;
+    color: white;
+    line-height: 5rem;
+    border-bottom: 3px solid rgb(197, 128, 0);
+    border-right: 3px solid rgb(197, 128, 0);
+    /* margin: 0.5rem; */
+}
+
+.secondary {
+    background-color: rgb(63, 63, 63);
+}
+
+.primary {
+    background-color: rgb(97, 97, 97);
+}
+
+.selected {
+    background-color: rgb(57, 192, 255);
+}
+.highlight {
+    background-color: rgb(32, 196, 54);
+}
+
+.problem {
+    background-color: lightcoral;
+}
+
+.fontstandard {
+    color: white;
+}
+
+.fontlocked {
+    color: black;
+}
+
+.fontproblem {
+    color: red;
+}

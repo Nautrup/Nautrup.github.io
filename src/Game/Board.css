@@ -1,0 +1,44 @@
+.Board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: fit-content;
+}
+.BoardPart {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: fit-content;
+    
+}
+
+.container {
+    display: flex;
+}
+.Selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: fit-content;
+
+}
+
+
+.powerups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: fit-content;
+}
+
+.powerup {
+    border: 1px solid grey;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    font-size: 3em;
+    font-family: 'Calibri';
+    font-weight: bold;
+    color: black;
+    line-height: 5rem;
+}
